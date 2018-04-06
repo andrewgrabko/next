@@ -19,9 +19,9 @@ h1,h2,h3,h4,h5,h6,p{
 /* Layout */
 
 .ba-container{
-	padding-left: 0px;
-	padding-right: 0px;
-	max-width: 1170px;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1200px;
 }
 
 /* Typography */
@@ -52,6 +52,11 @@ input[type="tel"],
 textarea,
 select {
 	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	font: 400 16px/55px 'Nunito' , sans-serif;
+    color: #898f9f;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #4c4c4c;
 }
 
 input[type="text"]:focus,
@@ -69,19 +74,23 @@ textarea {
 /* Header */
 
 .ba-header{
-	background: #fff url('../img/coat.png') no-repeat 0% 0%;
 	position: relative;
-	min-height:100vh ;
+	min-height:970px ;
 }
 .ba-menu{
 	position: absolute;
-	right: -205px;
+	right: 0;
 	top:71px;
-	
 }
+/*  @media(min-width: 1660px;){
+	.ba-menu{
+		right: -205px;
+	}
+}*/
 .ba-section-images{
 	position: relative;
 	padding-top: 64px;
+	z-index:3;
 }
 .ba-intro__suptitle{
 	font: 400 40px/1.2 'Nunito Sans', sans-serif;
@@ -105,17 +114,29 @@ textarea {
 	color:  #333333;
 }
 .ba-intro{
+	position: relative;
 	padding: 280px 0 100px 208px;
+	z-index: 2;
+}
+.ba-intro:before{
+	position: absolute;
+	content:"";
+	width: 564px;
+	height: 860px;
+	background: #fff url('../img/coat.png') no-repeat 0% 0%;
+	z-index: -1;
+	left:-315px;
+	top: -100px;
 }
 .ba-scroll{
 	position: absolute;
 	left: 50%;
-	top: 900px;
+	top: 800px;
 	
 }
 /* Product */
-.ba-section--ideas{
-	padding-bottom: 150px;
+.ba-section--product{
+	padding:150px 0 150px;
 }
 .ba-product{
 	display: flex;
@@ -135,8 +156,10 @@ textarea {
 	position: relative;
 	padding-bottom: 6px;
 }
-.ba-product__title:after{
-	content: "What We do?";
+.ba-abs{
+	position: relative;
+}
+.ba-product__title--abs{
 	font:400 110px/1 'Playfair Display', sans-serif;
 	color:  rgba(90, 90, 90, 0.0313725);
 	position: absolute;
@@ -158,11 +181,12 @@ textarea {
 /* Ideas */
 
 .ba-ideas{
-	
+	background: #fff url('../img/bg-ideas-only.jpg') no-repeat 100% 100%;
 	padding-top: 150px;
 }
 .ba-section--ideas{
-	background: #fff url('../img/bg-ideas.png') no-repeat 100% 50%;
+	padding:150px 0 150px;
+	
 }
 .ba-ideas__title{
 	font:400 60px/1.2 'Playfair Display', sans-serif;
@@ -170,8 +194,7 @@ textarea {
 	position: relative;
 	padding-bottom: 6px;
 }
-.ba-ideas__title:after{
-	content: "Innovate Thinking";
+.ba-ideas__title--abs{
 	font:400 110px/1 'Playfair Display', sans-serif;
 	color:  rgba(90, 90, 90, 0.0313725);
 	position: absolute;
@@ -180,12 +203,211 @@ textarea {
 	width: 994px;
 }
 .ba-ideas__subtitle{
-	padding-left: 50px;
+	padding: 20px 0 80px 200px;
 	font: 700 14px/1.4 'Nunito Sans',sans-serif;
 	color:  #717171;
-	padding-bottom: 50px;
-	max-width: 500px;
+	
 }
+.ba-column-first:first-child:first-letter{
+	font:700 100px/0px 'Nunito Sans', sans-serif;
+	color:  #333333;
+}
+.ba-ideas__content{
+	display: flex;
+	
+}
+.ba-column-first{
+	max-width: 370px;
+	text-align: justify;
+	margin-left: 90px;
+	
+}
+.ba-column-second{
+	padding-top: 14px;
+	display: flex;
+	padding-right: 290px;
+	margin-left: 50px;
+	
+}
+.ba-column-second__flex{
+	text-align: justify;
+	max-width: 370px;
+}
+.ba-column-second__flex p{
+	padding-bottom: 30px;
+}
+.ba-column-first p {
+	padding-bottom: 30px;
+}
+.ba-button--blog{
+	display: inline-block;
+	text-decoration: none;
+	font:700 17px/44px 'Nunito Sans', sans-serif;
+	color:  #d22425;
+	border:2px solid #e4e4e4 ;
+	padding: 0 30px 0 30px;
+}
+.ba-button--blog:hover{
+	background: grey;
+}
+
+/* Works */
+
+.ba-work{
+	padding:150px 0;
+	position: relative;
+	
+	
+}
+
+.ba-work__title{
+	font:400 60px/1.2 'Playfair Display', sans-serif;
+	color:  #333333;
+	position: relative;
+	padding-bottom: 110px;
+}
+.ba-work__title--abs{
+	font:400 110px/1 'Playfair Display', sans-serif;
+	color:  rgba(90, 90, 90, 0.0313725);
+	position: absolute;
+	left:-96px;
+	top:25px;	
+	width: 690px;
+}
+.ba-work__description{
+	max-height: 260px;
+	max-width: 375px;
+    padding: 40px 40px 40px 50px;
+    border:2px solid #e4e4e4 ;
+    
+}
+.ba-description__title{
+	font: 400 36px/1 "Playfair Display", serif;
+	color:  #333333;
+    margin-bottom: 30px;
+}
+.ba-work__slider{
+	position: absolute;
+	display: flex;
+	bottom: 50%;
+	left: 390px;
+	transform: translateY(215px);
+}
+.ba-slide{
+	padding-left: 15px;
+	flex-shrink: 0;
+}
+.ba-button--work{
+	display: inline-block;
+	
+	font:700 14px/1 'Nunito Sans', sans-serif;
+color:  #d22425;
+text-transform: uppercase;
+text-decoration: none;
+}
+.ba-button--work:hover{
+	color:black;
+}
+
+/* Contact */
+.ba-last{
+	background:#fff url('../img/coat-footer.jpg') no-repeat 0% 100% ;
+}
+.ba-contact-us{
+	padding: 150px 0;
+}
+.ba-contact-us__title{
+	font:400 60px/1.2 'Playfair Display', sans-serif;
+	color:  #333333;
+	position: relative;
+	padding-bottom: 30px;
+}
+.ba-contact-us__title--abs{
+	font:400 100px/1 'Playfair Display', sans-serif;
+	color:  rgba(90, 90, 90, 0.0313725);
+	position: absolute;
+	left:-185px;
+	top:225px;	
+	width: 490px;
+	transform: rotate(-90deg)
+}
+.ba-text{
+	max-width: 300px;
+    color: #8990a0;
+    font-size: 14px;
+    text-align: justify;
+}
+.ba-contact-form {
+    padding: 60px 0 50px 138px;
+}
+.ba-button--submit{
+	font:700 16px/52px 'Nunito Sans', sans-serif;
+	float: right;
+    background-color: #D11F20;
+    color: #fff;
+    text-transform: uppercase;
+    border:0;
+    padding: 0 30px 0 30px;
+}
+
+.ba-button--submit:hover{
+	background: grey;
+}
+
+.ba-footer {
+    padding: 165px 0 60px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
